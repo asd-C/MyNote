@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 new Stuff("ola", "09/08"),
                 new Stuff("????", "09/08"), };
 
+
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(new MyAdapter(this, stuffs));
     }
