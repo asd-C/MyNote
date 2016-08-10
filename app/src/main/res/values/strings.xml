@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyNote</string>
+    <string name="btn_ok">ok</string>
+    <string name="list_nothingToShow">nothing</string>
 </resources>

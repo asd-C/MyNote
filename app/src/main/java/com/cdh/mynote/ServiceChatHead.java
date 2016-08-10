@@ -2,6 +2,7 @@ package com.cdh.mynote;
 
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.ColorDrawable;
 import android.os.IBinder;
@@ -11,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
@@ -82,8 +84,8 @@ public class ServiceChatHead extends Service implements View.OnTouchListener{
     }
 
     private void showPopup(View v) {
-        View view = inflater.inflate(R.layout.popup, null);
-        Button button = (Button) view.findViewById(R.id.button);
+        final View view = inflater.inflate(R.layout.popup, null);
+        Button button = (Button) view.findViewById(R.id.popup_button);
 
         final PopupWindow popupWindow = new PopupWindow(view,
                 WindowManager.LayoutParams.WRAP_CONTENT,
@@ -95,7 +97,7 @@ public class ServiceChatHead extends Service implements View.OnTouchListener{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toast("button clicked");
+                toast(((EditText) view.findViewById(R.id.popup_editText)).getText().toString());
                 popupWindow.dismiss();
             }
         });
